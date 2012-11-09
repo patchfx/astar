@@ -20,17 +20,17 @@ Or install it yourself as:
 
 Make sure you have an object that responds to methods x,y and walkable_neighbours
 
-  class Tile
-    attr_reader :x, :y
+    class Tile
+      attr_reader :x, :y
 
-    #returns the surrounding tiles that are walkable
-    def walkable_neighbours
+      #returns the surrounding tiles that are walkable
+      def walkable_neighbours
+      end
     end
-  end
 
 Pass in your start and destination tiles
-  Astar::FindPath.from(tile1).to(tile3)
-  => [tile1, tile2, tile3]
+    Astar::FindPath.from(tile1).to(tile3)
+    => [tile1, tile2, tile3]
 
 The specs also have an example of how to use the lib.
 
