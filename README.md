@@ -29,6 +29,7 @@ Make sure you have an object that responds to methods x,y and walkable_neighbour
     end
 
 Pass in your start and destination tiles
+
     Astar::FindPath.from(tile1).to(tile3)
     => [tile1, tile2, tile3]
 
