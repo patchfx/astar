@@ -19,6 +19,7 @@ Or install it yourself as:
 ## Usage
 
 Make sure you have an object that responds to methods x,y and walkable_neighbours
+
   class Tile
     attr_reader :x, :y
 
