@@ -1,3 +1,5 @@
+require "astar/heuristic"
+require "astar/heuristic/manhatten_distance"
 require "astar/node"
 require "astar/version"
 
@@ -31,7 +33,7 @@ module Astar
     end
 
     def calculate_fastest
-      @open_list.sort_by! {|node| node.score }.reverse
+      @open_list.sort_by! {|node| @strategy.score(node) }.reverse
     end
 
     def destination_reached?
@@ -43,6 +45,7 @@ module Astar
       @from_node = Node.new(node, nil)
       @open_list = []
       @closed_list = []
+      @strategy = ManhattenDistance
     end
   end
 end
