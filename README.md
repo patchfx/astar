@@ -1,6 +1,7 @@
 # Astar
 
-Pathfinding library using the astar algorithm
+Pathfinding library using the astar algorithm, supports manhhaten and euclidean
+distance heuristics.
 
 ## Installation
 
@@ -32,6 +33,8 @@ Pass in your start and destination tiles
 
     Astar::FindPath.from(tile1).to(tile3)
     => [tile1, tile2, tile3]
+
+    Astar::FindPath.from(tile1).to(tile).use_euclidean_distance
 
 The specs also have an example of how to use the lib.
 

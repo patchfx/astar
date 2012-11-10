@@ -1,6 +1,6 @@
 require "astar/heuristic"
 require "astar/heuristic/manhatten_distance"
-require "astar/heuristic/euclidian_distance"
+require "astar/heuristic/euclidean_distance"
 require "astar/node"
 require "astar/version"
 
@@ -16,8 +16,8 @@ module Astar
       calculate_route
     end
 
-    def use_euclidian_distance
-      @strategy = EuclidianDistance
+    def use_euclidean_distance
+      @strategy = EuclideanDistance
     end
 
     def calculate_route
