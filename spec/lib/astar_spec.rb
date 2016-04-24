@@ -12,10 +12,12 @@ module Astar
       expect(node4).to receive(:walkable_neighbours) { [node2,node3,node] }
     end
 
-    it 'finds the fastest route between 2 nodes' do
-      path = FindPath.from(node).to(node4)
-      coords = path.collect { |node| [node.x, node.y] }
-      expect(coords).to match_array([[0, 0], [1, 1]])
+    context 'manhatten distance' do
+      it 'finds the fastest route between 2 nodes' do
+        path = FindPath.from(node).to(node4, Astar::ManhattenDistance)
+        coords = path.collect { |node| [node.x, node.y] }
+        expect(coords).to match_array([[0, 0], [1, 1]])
+      end
     end
   end
 end

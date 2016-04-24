@@ -37,15 +37,11 @@ class Tile
 end
 ```
 
-Pass in your start and destination tiles
+Pass in your to and from tiles including the heuristic
 
 ```ruby
-Astar::FindPath.from(tile1).to(tile3)
-=> [tile1, tile2, tile3]
-```
-
-```ruby
-Astar::FindPath.from(tile1).to(tile, EuclidianDisance)
+Astar::FindPath.from(tile1).to(tile, Astar::ManhattenDistance)
+Astar::FindPath.from(tile1).to(tile, Astar::EuclideanDistance)
 ```
 
 The specs also have an example of how to use the lib.
