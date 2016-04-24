@@ -8,16 +8,14 @@ module Astar
     let(:node4) { double(:node4, x: 1, y: 1) }
 
     before do
-      node.stub(:walkable_neighbours => [node2,node3,node4])
-      node2.stub(:walkable_neighbours => [node,node3,node4])
-      node3.stub(:walkable_neighbours => [node,node2,node4])
-      node4.stub(:walkable_neighbours => [node2,node3,node])
+      expect(node).to receive(:walkable_neighbours) { [node2,node3,node4] }
+      expect(node4).to receive(:walkable_neighbours) { [node2,node3,node] }
     end
 
     it 'finds the fastest route between 2 nodes' do
       path = FindPath.from(node).to(node4)
       coords = path.collect { |node| [node.x, node.y] }
-      coords.should == [[0, 0], [1, 1]]
+      expect(coords).to match_array([[0, 0], [1, 1]])
     end
   end
 end
