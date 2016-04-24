@@ -7,20 +7,27 @@ distance heuristics.
 
 Add this line to your application's Gemfile:
 
+    ```ruby
     gem 'astar'
+    ```
 
 And then execute:
 
-    $ bundle
+    ```ruby
+    bundle
+    ```
 
 Or install it yourself as:
 
-    $ gem install astar
+    ```ruby
+    gem install astar
+    ```
 
 ## Usage
 
 Make sure you have an object that responds to methods x,y and walkable_neighbours
 
+    ```ruby
     class Tile
       attr_reader :x, :y
 
@@ -28,13 +35,18 @@ Make sure you have an object that responds to methods x,y and walkable_neighbour
       def walkable_neighbours
       end
     end
+    ```
 
 Pass in your start and destination tiles
 
+    ```ruby
     Astar::FindPath.from(tile1).to(tile3)
     => [tile1, tile2, tile3]
+    ```
 
-    Astar::FindPath.from(tile1).to(tile).use_euclidean_distance
+    ```ruby
+    Astar::FindPath.from(tile1).to(tile, EuclidianDisance)
+    ```
 
 The specs also have an example of how to use the lib.
 

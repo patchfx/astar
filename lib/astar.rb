@@ -10,14 +10,11 @@ module Astar
       new(node)
     end
 
-    def to(node)
+    def to(node, strategy=ManhattenDistance)
       @to_node = Node.new(node,nil)
       @open_list << Node.new(@from_node, @to_node)
+      @strategy = strategy
       calculate_route
-    end
-
-    def use_euclidean_distance
-      @strategy = EuclideanDistance
     end
 
     def calculate_route
